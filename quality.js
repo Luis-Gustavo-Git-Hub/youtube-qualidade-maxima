@@ -6,12 +6,15 @@
     hd2880: 2880, hd4320: 4320, highres: 10000
   };
   let enabled = false;
+  let preferredQuality = 'max';
+  const allowedQualities = ['max',144,240,360,480,720,1080,1440,2160,2880,4320];
   let lastPlayer, lastVideo, lastTarget, lastAttempt = 0;
   window.addEventListener('message', event => {
     if (event.source !== window || event.origin !== location.origin ||
         event.data?.source !== 'youtube-max-settings' || typeof event.data.enabled !== 'boolean') return;
     const wasEnabled = enabled;
     enabled = event.data.enabled;
+    preferredQuality = allowedQualities.includes(event.data.quality) ? event.data.quality : 'max';
     lastTarget = undefined;
     if (!enabled && wasEnabled) {
       // Release the resolution range so manual selection and adaptive playback work again.
@@ -45,7 +48,15 @@
         }
       }
       choices.sort((a,b) => b.height - a.height || Number(b.premium) - Number(a.premium) || b.bitrate - a.bitrate);
-      const selected = choices[0];
+      let candidates = choices;
+      if (preferredQuality !== 'max' && choices.length) {
+        candidates = choices.filter(q => q.height <= preferredQuality);
+        if (!candidates.length) {
+          const minimum = Math.min(...choices.map(q => q.height));
+          candidates = choices.filter(q => q.height === minimum);
+        }
+      }
+      const selected = candidates[0];
       if (!selected) return;
       const target = selected.quality;
       const targetKey = target + ':' + JSON.stringify(selected.formatId ?? null);

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "YouTube — Qualidade Máxima",
-  "version": "2.0.0",
-  "description": "Seleciona automaticamente a maior qualidade disponível nos vídeos do YouTube.",
+  "version": "2.1.0",
+  "description": "Seleciona a qualidade desejada no YouTube, com opção de máxima disponível e preferência por bitrate Premium.",
   "minimum_chrome_version": "111",
   "content_scripts": [
     {
@@ -34,6 +34,18 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "YouTube Max"
+    "default_title": "YouTube Max",
+    "default_icon": {
+      "16": "icons/max-16.png",
+      "32": "icons/max-32.png",
+      "48": "icons/max-48.png",
+      "128": "icons/max-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/max-16.png",
+    "32": "icons/max-32.png",
+    "48": "icons/max-48.png",
+    "128": "icons/max-128.png"
   }
 }

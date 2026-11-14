@@ -36,3 +36,8 @@ pagos. Compatibilidade depende das funções internas atuais do YouTube.
 A UI e a lógica foram verificadas em simulação, sem sessão Premium real.
 Referência de funcionamento do player (código do autor):
 https://greasyfork.org/en/scripts/508784-youtube-hd-plus/code
+
+VERSÃO 2.1.0
+Ícone MAX e seletor de resolução no painel. Se a resolução escolhida não
+estiver disponível, usa a melhor inferior; se todas forem superiores,
+usa a menor. Máxima disponível continua como padrão.

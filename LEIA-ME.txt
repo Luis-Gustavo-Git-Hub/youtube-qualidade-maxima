@@ -1,0 +1,38 @@
+YOUTUBE — QUALIDADE MÁXIMA
+
+Instalação no Brave ou Chrome (computador)
+1. Extraia o ZIP e mantenha a pasta extraída no computador.
+2. Abra brave://extensions ou chrome://extensions.
+3. Ative o Modo do desenvolvedor.
+4. Clique em Carregar sem compactação.
+5. Selecione a pasta que contém manifest.json.
+6. Recarregue as abas do YouTube já abertas.
+
+A extensão tenta manter a maior resolução oferecida pelo player, inclusive
+ao mudar de vídeo e quando aparecem resoluções superiores. Para desativar,
+use o botão da extensão na página de extensões do navegador.
+
+Não há coleta de dados, serviços externos ou bibliotecas remotas.
+O código roda apenas nas páginas do YouTube declaradas no manifest.
+
+Limitações
+- Não cria 4K/8K quando o vídeo não oferece essas resoluções e não libera
+  qualidades restritas a assinantes.
+- A maior qualidade pode aumentar o consumo de internet e causar pausas.
+- Usa funções internas do player do YouTube, que podem mudar ou ser
+  ignoradas pelo site. Não foi validada em reprodução real nesta entrega.
+- Destinada a Chrome/Brave no computador; não é um aplicativo Android.
+
+Base do formato de extensão (Manifest V3):
+https://developer.chrome.com/docs/extensions/reference/manifest/content-scripts
+
+VERSÃO 2.0
+Clique no ícone da extensão para abrir o painel e ativar/desativar.
+A preferência é salva e aplicada às abas abertas, sem recarregar.
+Ao desativar, o limite imposto pela extensão é liberado para Automático.
+Prioriza resolução; na mesma resolução, prefere a variante Premium
+reproduzível, usando o formatId informado pelo player. Não libera planos
+pagos. Compatibilidade depende das funções internas atuais do YouTube.
+A UI e a lógica foram verificadas em simulação, sem sessão Premium real.
+Referência de funcionamento do player (código do autor):
+https://greasyfork.org/en/scripts/508784-youtube-hd-plus/code

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YouTube Max</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header><span class="logo" aria-hidden="true">▶</span><span>YOUTUBE <b>MAX</b></span><span class="version">2.0</span></header>
+  <main>
+    <div class="eyebrow">CADA DETALHE CONTA</div>
+    <h1>Seu vídeo.<br>Na melhor qualidade.</h1>
+    <p class="intro">A maior resolução disponível, selecionada automaticamente.</p>
+    <section class="control"><div><strong id="status">Carregando…</strong><p id="description">Lendo sua preferência</p></div><button id="toggle" role="switch" aria-checked="false" aria-label="Qualidade máxima automática" disabled><span></span></button></section>
+    <div class="features"><div><span class="feature-icon">↗</span><div><strong>Resolução máxima</strong><p>De HD a 8K, conforme o vídeo.</p></div></div><div><span class="feature-icon gold">✦</span><div><strong>Premium, quando disponível</strong><p>Prioriza bitrate alto na mesma resolução.</p></div></div></div>
+    <p class="note">4K e 8K têm prioridade sobre 1080p Premium. Bitrate alto depende da sua assinatura e das opções liberadas pelo YouTube.</p>
+    <p id="error" role="alert" hidden></p>
+  </main>
+  <footer><span class="dot"></span> Preferência salva neste navegador</footer>
+  <script src="popup.js"></script>
+</body></html>
